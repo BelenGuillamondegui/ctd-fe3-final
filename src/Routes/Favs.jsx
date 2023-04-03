@@ -22,6 +22,10 @@ const Favs = () => {
 
 <h1>{favs}</h1>
 
+            {/* {favs.map((favs) => <h1>hola</h1>
+            )
+            } */}
+      
 
         {/* Deberan renderizar una Card por cada uno de ellos */}
       </div>

@@ -19,7 +19,7 @@ function App() {
               <Route path='/dentista/:id' element={<Detail />}/> 
               <Route path= "/favs" element={<Favs/>} />
         </Routes>
-          <Footer/>
+        <Footer/>
       </div>
   );
 }
