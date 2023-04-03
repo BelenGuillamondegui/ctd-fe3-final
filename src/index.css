@@ -13,10 +13,12 @@ code {
 }
 .favButton{
   background-color: rgba(136, 136, 136, 0.116);
+  margin-top: 50px;
   padding: 10px;
   border: none;
   width: 100%;
   cursor: pointer;
+  
 }
 
 h1{
@@ -119,4 +121,7 @@ tr:nth-child(even) {
 }
 .dark > a {
   color: white;
+}
+.imgDr{
+  width:200px
 }
