@@ -6,11 +6,13 @@ import { useContextGlobal } from "../Components/utils/global.context"
 
 const Favs = () => {
 
-  
+  let miFav=JSON.parse(localStorage.getItem("token"))
 
-  let favs= localStorage.getItem ("token")
-
- console.log(favs);
+//   let favs= localStorage.getItem ("token")
+// let parsedFavs=JSON.parse(favs)
+//  console.log(favs);
+//  console.log(favs);
+ console.log(miFav);
 
   return (
     <>
@@ -20,11 +22,14 @@ const Favs = () => {
       <div className="card-grid">
         {/* este componente debe consumir los destacados del localStorage */}
 
-<h1>{favs}</h1>
-
-            {/* {favs.map((favs) => <h1>hola</h1>
-            )
-            } */}
+{miFav.map(doctor=>(
+  <div className="card"> 
+    <img className= "imgDr"src= "./images/doctor.jpg" alt="" />
+      <h3>{doctor.id}</h3>
+       <h3>{doctor.name}</h3>
+       <h3>{doctor.username}</h3>
+       </div>
+))}
       
 
         {/* Deberan renderizar una Card por cada uno de ellos */}

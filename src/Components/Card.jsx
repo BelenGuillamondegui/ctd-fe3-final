@@ -9,22 +9,32 @@ import { useContextGlobal } from "./utils/global.context";
 
 const Card = ({doctor}) => {
   // const {doctors} = useContextGlobal()
-  const{setAuth}=useContextGlobal
-  const listafav=[]
   console.log(doctor);
 
-  // const showFav=()=>{
-  //   let doctorFavParse= localStorage.getItem(doctor, JSON.parse({doctor}))
-  //   if (listafav === ""){
-  //     listafav.push(JSON.stringify(doctorFavParse))
-  //     console.log(listafav);
-  //   }
-  // }
+    // const showFav=()=>{
+    //   let doctorFavParse= localStorage.getItem(doctor, JSON.parse({doctor}))
+    //   if (!listafav === null){
+    //     listafav.push(JSON.stringify(doctorFavParse))
+    //     console.log(listafav);
+    //   }
+    // }
+  // let token=localStorage.getItem("token")
  
   const addFav = (e)=>{
     // Aqui iria la logica para agregar la Card en el localStorage
-   let doctorfav= localStorage.setItem("token", JSON.stringify(doctor))
+// if(token){
+// let parsedFavs=JSON.parse(token)
+// token=[...parsedFavs, doctor]
+// }else{
+//   token=[doctor]
+// }
+let miFav=JSON.parse(localStorage.getItem("token")) || [];
+miFav.push(doctor)
 
+console.log(doctor);
+   let arrayJson= JSON.stringify(miFav) 
+   localStorage.setItem("token", arrayJson)
+console.log(miFav);
   }
  
   return (

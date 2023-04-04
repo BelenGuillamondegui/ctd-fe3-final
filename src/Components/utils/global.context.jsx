@@ -34,12 +34,9 @@ export const initialState = {theme: "light", data:[]}
 
 export const ContextProvider = ({ children }) => {
   //Aqui deberan implementar la logica propia del Context, utilizando el hook useMemo
-  const [auth, setAuth]= useState(false)
   const [doctors, setDoctors] = useState([])
 
-  useEffect(() => {
   
-  }, [auth])
   
   
   const url = "https://jsonplaceholder.typicode.com/users"
@@ -49,10 +46,9 @@ useEffect(() =>{
   .then(res => res.json())
   .then(data => setDoctors(data))
 },[])
-let token= localStorage.getItem ("token")
 // console.log(doctors);
   return (
-    <ContextGlobal.Provider value={{doctors, setDoctors, token, setAuth}}>
+    <ContextGlobal.Provider value={{doctors, setDoctors}}>
       {children}
     </ContextGlobal.Provider>
   );

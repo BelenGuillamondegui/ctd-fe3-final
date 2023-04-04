@@ -10,7 +10,7 @@ import Card from '../Components/Card'
 const Home = () => {
 const {doctors} = useContextGlobal()
 
-console.log(doctors);
+// console.log(doctors);
   return (
     <main className="" >
       <h1>Home</h1>
