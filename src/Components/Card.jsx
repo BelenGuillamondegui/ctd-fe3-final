@@ -2,32 +2,16 @@ import React from "react";
 import { Link } from 'react-router-dom'
 import Detail from "../Routes/Detail";
 import { useContextGlobal } from "./utils/global.context";
-// import { useContextGlobal } from './utils/global.context'
-// import { useState, useEffect } from "react";
+
 
 
 
 const Card = ({doctor}) => {
-  // const {doctors} = useContextGlobal()
   console.log(doctor);
-
-    // const showFav=()=>{
-    //   let doctorFavParse= localStorage.getItem(doctor, JSON.parse({doctor}))
-    //   if (!listafav === null){
-    //     listafav.push(JSON.stringify(doctorFavParse))
-    //     console.log(listafav);
-    //   }
-    // }
-  // let token=localStorage.getItem("token")
  
   const addFav = (e)=>{
     // Aqui iria la logica para agregar la Card en el localStorage
-// if(token){
-// let parsedFavs=JSON.parse(token)
-// token=[...parsedFavs, doctor]
-// }else{
-//   token=[doctor]
-// }
+
 let miFav=JSON.parse(localStorage.getItem("token")) || [];
 miFav.push(doctor)
 
