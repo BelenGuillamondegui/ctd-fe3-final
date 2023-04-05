@@ -5,29 +5,18 @@ export const ContextGlobal = createContext();
 
 export const initialState = {theme: "light", data:[]}
 
-// const reducer =(state, action)=>{
-//   switch (action.type) {
-//     case 'toggle':
-//       return {
-//         theme: state.theme === 'light' ? 'dark' : 'light',
-//       };
-//     default:
-//       throw new Error('ocurrió un error');
-//   }
-// };
+export const reducer =(state, action)=>{
+  switch (action.type) {
+    case 'BTN_TOGGLE':
+      return {
+          ...state,
+        theme: state.theme === 'light' ? 'dark' : 'light',
+      };
+    default:
+      return state;
+  }
+};
 
-// const MyComponent = () => {
-//   const { state, dispatch } = useReducer(reducer,initialState);
-
-//   return (
-//     <div className={state.theme}>
-//       <button onClick={() => dispatch({ type: 'toggle' })}>
-//         {state.theme === 'light' ? 'Dark' : 'Light'}
-//       </button>
-     
-//     </div>
-//   );
-// };
 
 
 
@@ -35,10 +24,8 @@ export const initialState = {theme: "light", data:[]}
 export const ContextProvider = ({ children }) => {
   //Aqui deberan implementar la logica propia del Context, utilizando el hook useMemo
   const [doctors, setDoctors] = useState([])
+  const [state, dispatch] = useReducer(reducer, initialState);
 
-  
-  
-  
   const url = "https://jsonplaceholder.typicode.com/users"
   
 useEffect(() =>{
@@ -46,9 +33,9 @@ useEffect(() =>{
   .then(res => res.json())
   .then(data => setDoctors(data))
 },[])
-// console.log(doctors);
-  return (
-    <ContextGlobal.Provider value={{doctors, setDoctors}}>
+
+return (
+    <ContextGlobal.Provider value={{doctors, setDoctors,state, dispatch}}>
       {children}
     </ContextGlobal.Provider>
   );

@@ -12,13 +12,22 @@ code {
     monospace;
 }
 .favButton{
-  background-color: rgba(136, 136, 136, 0.116);
-  margin-top: 50px;
+  color: #fff;
+  background-color: #ff6b6b;
+  margin-top: 10px;
   padding: 10px;
+  border-radius: 5px;
   border: none;
   width: 100%;
   cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
   
+}
+.favButton:hover{
+  background-color: #ff4949;
+font-size: 19px;
+
 }
 
 h1{
@@ -108,7 +117,7 @@ form{
 }
 
 .card:hover{
-  border: 0.5px solid rgb(206, 217, 142);
+  border: 3px solid rgb(217, 142, 147);
 }
 
 .card-grid{
@@ -148,6 +157,19 @@ tr:nth-child(even) {
 .dark > a {
   color: white;
 }
+.dark .card{
+  border: 0.5px solid rgb(12, 12, 12);
+
+}
+.dark .card:hover{
+  border: 3px solid rgb(217, 142, 147);
+
+}
+
 .imgDr{
   width:200px
+}
+.light {
+  background-color: #f8f8f8;
+  color: #333;
 }

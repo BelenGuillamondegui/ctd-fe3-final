@@ -1,14 +1,21 @@
 import React, { useReducer } from 'react'
 import { Link } from 'react-router-dom'
-import Footer from './Footer'
-// import React, {useReducer} from "react";
+import { useContextGlobal } from "./utils/global.context";
+
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
+
 const Navbar = () => {
+    const {state, dispatch} = useContextGlobal()
+
+
+  const toggle=()=>{
+    dispatch({type:'BTN_TOGGLE'});
+  }
 
   return (
  
-    <nav className='nav'>
+    <nav className='nav' >
         <img classname= "dh" src= "./DH.ico" alt='Digital House logo' />
 
       {/* Aqui deberan agregar los liks correspondientes a las rutas definidas */}
@@ -17,7 +24,7 @@ const Navbar = () => {
         <Link to='/favs'><h3>favoritos</h3></Link>
 
       {/* Deberan implementar ademas la logica para cambiar de Theme con el button */}
-      <button>Change theme</button>
+      <button onClick={toggle}>{state.theme === 'light' ? '🌙 dark' : '🌞 light'} <span/> theme</button>
     </nav>
 
   )

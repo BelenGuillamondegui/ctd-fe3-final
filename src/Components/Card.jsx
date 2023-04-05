@@ -7,7 +7,7 @@ import { useContextGlobal } from "./utils/global.context";
 
 
 const Card = ({doctor}) => {
-  console.log(doctor);
+  // console.log(doctor);
  
   const addFav = (e)=>{
     // Aqui iria la logica para agregar la Card en el localStorage
@@ -19,6 +19,8 @@ console.log(doctor);
    let arrayJson= JSON.stringify(miFav) 
    localStorage.setItem("token", arrayJson)
 console.log(miFav);
+
+alert("Has agregado correctamente al profesional " + doctor.name + " como favorito")
   }
  
   return (
@@ -36,7 +38,7 @@ console.log(miFav);
       
     <div>
         
-        <button onClick={addFav} className="favButton">Add fav</button>
+        <button onClick={addFav} className="favButton">Add fav⭐</button>
         </div>
         
     </>

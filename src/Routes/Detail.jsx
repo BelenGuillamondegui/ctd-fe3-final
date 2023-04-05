@@ -22,12 +22,7 @@ const Detail = () => {
           getDetail()
       }, [])
       
-// if(fav){
-// let parsedFavs=JSON.parse(fav)
-// token=[...parsedFavs, doctor]
-// }else{
-//   token=[deatil]
-// }
+
   // Consumiendo el parametro dinamico de la URL deberan hacer un fetch a un user en especifico
   return (
     

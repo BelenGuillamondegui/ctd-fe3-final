@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Card from "../Components/Card";
-import { useContextGlobal } from "../Components/utils/global.context";
-import Footer from "../Components/Footer";
+
 
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 let miFav = JSON.parse(localStorage.getItem("token"));
@@ -38,7 +36,7 @@ useEffect(() => {
 </>
     
       ): (
-            <h1>Aún no has agregado ningún doctor favorito</h1>
+            <h1>Aún no has agregado ningún doctor como favorito</h1>
           )
     }
     </>
