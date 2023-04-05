@@ -5,15 +5,17 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-.favButton{
+.favButton {
   color: #fff;
-  background-color: #ff6b6b;
+  background-color: #BB86FC;opacity: 60%;
+color: white;opacity: 100%;
   margin-top: 10px;
   padding: 10px;
   border-radius: 5px;
@@ -25,30 +27,44 @@ code {
   
 }
 .favButton:hover{
-  background-color: #ff4949;
 font-size: 19px;
+background-color: #3700B3; opacity: 80%;
 
 }
 
 h1{
   text-align: center;
-}
+  
+    animation: neon 1.5s ease-in-out infinite alternate;
+  }
+  
+  @keyframes neon {
+    from {
+      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #fff, 0 0 35px #00e3ff, 0 0 40px #00e3ff, 0 0 50px #00e3ff, 0 0 75px #00e3ff;
+    }
+    to {
+      text-shadow: 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #fff, 0 0 35px #00e3ff, 0 0 40px #00e3ff, 0 0 50px #00e3ff, 0 0 75px #00e3ff, 0 0 100px #00e3ff;
+    }
+  }
+
 
 nav{
   display: flex;
   width: 80vw;
   justify-content: flex-end;
   padding: 1rem;
+  
 }
 
 a{
-  color: #000;
+  color: #5a5858;
   text-decoration: none;
   margin: 5px;
   cursor: pointer;
 }
 a:hover{
-  color: rgb(136, 136, 136);
+  color: #000;
+
 } 
 
 footer {
@@ -67,13 +83,10 @@ footer > img{
   width: 200px;
   margin: 0;
 }
-footer > p{
-  margin: 0;
-  padding-top: 0.7rem;
-}
+
 .miFooter{
   display: flex;
-  background-color: red;
+  background-color: #B6DEE7;
   width:100%;
   height: 10px;
   margin-bottom: 100px;
@@ -101,23 +114,31 @@ form{
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width: 300px;
-  height: 100px;
+  width: 350px;
+  height: 150px;
   margin: 0 auto;
+  font-size: 18px;
+  color:black
 }
+
 
 .card{
   display: flex;
   justify-content: space-around;
   flex-direction: column;
   align-items: center;
-  width: 200px;
+  width: 240px;
   padding: 0.5rem 0.5rem 0 0.5rem;
   border: 0.5px solid rgb(136, 136, 136);
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+
 }
 
 .card:hover{
-  border: 3px solid rgb(217, 142, 147);
+  border: 3px solid  #3700B3; opacity: 80%;
+  transform: scale(1.05);
+
 }
 
 .card-grid{
@@ -136,40 +157,99 @@ form{
     width: 100%;
     display: table;
     border: 1px solid #ccc;
+    margin-top: 150px;
+    margin-bottom: 350px;
 
 
 }
 
 td, th {
   border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
+  text-align: center;
+  padding: 20px;
+}
+td{
+  font-size: 20px;
 }
 
-tr:nth-child(even) {
-  background-color: #dddddd;
+th{
+  background-color:#BB86FC;opacity: 80%;
+  color: white;
+  font-size: 22px;
+
 }
 
 .dark{
   background-color: #12121296;
   color: white;
 }
-.dark > a {
-  color: white;
+.dark a, h3, h1 {
+  color: black;
 }
+
 .dark .card{
   border: 0.5px solid rgb(12, 12, 12);
 
 }
 .dark .card:hover{
-  border: 3px solid rgb(217, 142, 147);
+  border: 3px solid #3700B3; opacity: 80%;
 
 }
-
-.imgDr{
-  width:200px
+.dark .favButton:hover{
+  font-size: 19px;
+background-color: #3700B3; opacity: 80%;
 }
+.dark .favButton{
+  background-color: #BB86FC;
+  color:white
+}
+.dark th{
+  color: black;
+}
+
 .light {
   background-color: #f8f8f8;
   color: #333;
+}
+.imgDr{
+  width:200px
+}
+
+.btnTheme{
+  background: linear-gradient(to left, #3700B3, #BB86FC);
+  border: none;
+  color:black;
+  padding: 2px 6px;
+  padding-bottom: 3px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  font-size: 16px;
+  
+}
+.dark .btnTheme{
+  color:white;
+}
+.contact{
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 250px;
+}
+.contact p{
+  font-size: 18px;
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+.contactMsj{
+  font-size: 22px;
+  color:#3700B3;
+}
+.favs{
+  margin-bottom: 130px;
+ 
+}
+.noFavs{
+  margin-bottom: 350px;
+  margin-top: 190px;
 }

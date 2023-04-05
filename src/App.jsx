@@ -8,22 +8,20 @@ import Contact from "./Routes/Contact";
 import Favs from "./Routes/Favs";
 import { useContextGlobal } from "./Components/utils/global.context";
 
-
-
 function App() {
-  const {state, dispatch} = useContextGlobal()
+  const { state, dispatch } = useContextGlobal();
 
   return (
-      <div className= {state.theme}>
-          <Navbar/>
-          <Routes>
-              <Route path="/" element={<Home/>}></Route>
-              <Route path="/contacto" element={<Contact/>}/>
-              <Route path='/dentista/:id' element={<Detail />}/> 
-              <Route path= "/favs" element={<Favs/>} />
-        </Routes>
-        <Footer/>
-      </div>
+    <div className={state.theme}>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/contacto" element={<Contact />} />
+        <Route path="/dentista/:id" element={<Detail />} />
+        <Route path="/favs" element={<Favs />} />
+      </Routes>
+      <Footer />
+    </div>
   );
 }
 
