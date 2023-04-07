@@ -9,7 +9,7 @@ import Favs from "./Routes/Favs";
 import { useContextGlobal } from "./Components/utils/global.context";
 
 function App() {
-  const { state, dispatch } = useContextGlobal();
+  const { state } = useContextGlobal();
 
   return (
     <div className={state.theme}>
